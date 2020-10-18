@@ -1,0 +1,6 @@
+default,#ba68c8
+computer science,#64b5f6,algorithms,artificial-intelligence,networking,operating-systems,compiler-theory,software-engineering,theory-of-computation,computer-architecture,distributed-systems,databases,computer-graphics,computer-security
+engineering,#f06292,control-theory,electronics,signal-processing,robotics
+mathematics,#ffeb3b,probability-theory,logic,game-theory,calculus,combinatorics,geometry,information-theory,topology,number-theory,algebra
+physics,#76ff03,electromagnetism,optics,classical-mechanics,thermodynamics,quantum-mechanics,astronomy,relativity
+miscellaneous,#ba68c8,psychology,philosophy,biology,finance

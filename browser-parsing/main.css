@@ -1,0 +1,22 @@
+.alert {
+    text-align: center;
+    margin-top: 100px;
+    background-color: #cccccc;
+    height: 100px;
+    line-height: 100px;
+    width: 250px;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.green {
+    background-color: green;
+    color: white;
+}
+
+#greeting {
+    text-transform: capitalize;
+}
