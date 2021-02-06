@@ -20,12 +20,13 @@ def invoke(action, **params):
     return response['result']
 
 parser = WiktionaryParser()
+parser.set_default_language('french')
 ws = input("Enter comma separated words: ").split(',')
-# parser.set_default_language('German')
+mapping = {"noun": "n", "verb": "v", "adjective": "adj", "adverb": "adv", "conjunction": "conj", "preposition": "prep", "interjection": "interj", "phrase": "phrase"}
 
 for w in ws:
+    w = w.lower()
     word = parser.fetch(w)
-    audio_file = 'a'
     audio = []
 
     try:
@@ -43,7 +44,6 @@ for w in ws:
         definition = word[0]['definitions'][0]
     except IndexError:
         print(f"{w} not found")
-        print(word)
         continue
 
     ipa = ""
@@ -74,10 +74,6 @@ for w in ws:
         elif pr[:9] == '(US): IPA': # priority 3
             if priority < 3:
                 ipa = pr[11:]
-    try:
-        examples = definition['examples'][0]
-    except IndexError:
-        examples = ''
 
     note = {
             "note":
@@ -86,10 +82,10 @@ for w in ws:
                     "modelName": "Vocabulary",
                     "fields": {
                         "Word": w,
-                        "Part of Speech": definition['partOfSpeech'],
+                        "Part of Speech": mapping[definition['partOfSpeech']],
                         "IPA": ipa,
                         "Definition": definition['text'][1],
-                        "Examples": examples
+                        "Examples": '' if len(definition['examples']) == 0 else definition['examples'][0]
                         },
                     "options": {
                         "allowDuplicate": False,
