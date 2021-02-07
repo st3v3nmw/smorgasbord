@@ -1,1 +1,8 @@
+// this is a comment
+(( )){} // grouping stuff
+!*+-/=<> <= == // operators
+/*
+this is a C-style
+multiline comment
+*/
 print "Hello, world!";
